@@ -1,0 +1,399 @@
+
+\documentclass[6pt]{article}
+\usepackage{float}
+\usepackage{graphicx,epstopdf}
+\usepackage{bbm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{csquotes}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{theorem}
+\usepackage{graphicx}
+\usepackage[dvips]{epsfig}
+\usepackage{latexsym}
+\usepackage{exscale}
+\usepackage[latin1]{inputenc}
+\def\ud{\, \mathrm{d}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, September 28, 2014 13:53:13}
+%TCIDATA{LastRevised=Monday, October 06, 2014 05:15:04}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\numberwithin{equation}{section}
+
+\begin{document}
+\title{On the Distribution of Extended CIR Model}
+\author{Qidi Peng\footnote{Institute of Mathematical Sciences, Claremont Graduate University, E-mail: Qidi.Peng@cgu.edu}~~and~ Henry Schellhorn\footnote{Institute of Mathematical Sciences, Claremont Graduate University, E-mail: Henry.Schellhorn@cgu.edu}}
+\date{}
+\maketitle
+
+\begin{abstract}
+We provide a complete representation of the interest rate in the extended
+Cox-Ingersoll-Ross\ model. The model we consider is an extension of the
+traditonal Cox-Ingersoll-Ross model to the case where all the parameters are
+time-varying, and no specific relationship exists between them. The rate can
+be represented as the sum of a non-central chi-square random variable, and
+of a weighted series of central chi-square random variables, where all
+random variables are independent.
+\end{abstract}
+
+\section{Introduction}
+We consider the extended Cox-Ingersoll-Ross term structure model (ECIR model), namely, the spot interest
+rate $r(t)$ is assumed to follow a squared Bessel process $\{r(t)\}_{t\ge0}$ which satisfies the following stochastic differential equation:
+\begin{equation}
+\label{CIR}
+\left\{\begin{array}{ll}
+&\ud r(t)=(-b(t)r(t)+\theta(t))\ud t+\sigma(t)\sqrt{r(t)}\ud W(t);\\
+&r(0)=r_0\ge0,
+\end{array}\right.
+\end{equation}
+where $b(t)\ge0$, $\sigma(t) >0$ and $\theta(t)\ge0 $ are time dependent continuous functions and $W$ is a standard Wiener process. The Cox-Ingersoll-Ross term structure model (CIR model), was first introduced in Cox et al. (1985a), (1985b).  In its original specification, the speed of mean reversion $b\geq 0$, the volatility $%
+\sigma >0$ and the parameter $\theta >0$ are assumed constant.
+
+Several features of the CIR model are particularly attractive. Firstly, it
+can be justified by general equilibrium considerations, see Cox et al
+(1985a). Secondly, the interest rate is always positive and stationary. Cox
+et al. found that its distribution follows a noncentral chi-square
+distribution. Finally, there is a closed form formula for the bond price.\
+For practitioners however, the main shortcoming of the constant parameters
+version of the model is that it cannot reproduce the original term structure
+of interest rates. This fact was highlighted by several authors (Hull, 1990; Keller-Ressel and Steiner, 2008; Yang, 2006 and all the references
+therein): yield curves can be only normal, inverse, or humped. The extended
+CIR model, however, has enough parameters to be fitted to the original yield
+curve.
+
+Maghsoodi (1996), Jamshidian (1995), and Rogers (1995) propose a
+representation of the extended CIR model as a sum of squares of
+Ornstein-Uhlenbeck processes when the dimension $d(t)\equiv 4\theta
+(t)/\sigma ^{2}(t)$ is constant and integer. As a consequence, the interest
+rate follows the generalized chi-square distribution. Maghsoodi (1996), and
+Shirakawa (2002) also propose a representation of the interest rate as a
+time-changed lognormal process. However, as the latter author states, \enquote{it is
+difficult to derive the probability distribution of the squared Bessel
+processes with time-varying dimensions explicitly}. Brigo and Mercurio
+(2006) state that no solution to that problem has been found.
+
+In our paper, we determine this distribution explicitly. We show that, for
+each, the rate can be represented as the sum of a non-central chi-square
+random variable $X_{0}$, and of a weighted series of central chi-square
+random variables $\{X_{1},X_{2},\ldots\}$. The variables $X_{0}$, $%
+X_{1},X_{2},\ldots$ are all independent. The random variable $X_{0}$ has a
+number of degrees of freedom equal to $d(0).$When the dimension $d$ is
+constant, the random variables $\{X_{1},X_{2},\ldots\}$ are all zero, and we
+recover the traditional result. Thus the latter random variables represent
+deviations of the rate from the constant dimension case.
+
+There are alternate approaches to extend the CIR model. Brigo and Mercurio
+(2001) find that a deterministic shift of the CIR model is analytically
+tractable. The obvious drawback of making the parameters of the CIR model
+functions of time is the problem of overparameterization: the parameters
+will not be robust in a change of regime. Several authors consider instead a
+CIR model of interest rates with constant parameters and stochastic
+volatility. For instance, Longstaff and Schwartz (1992), and Duffie and Kan
+(1996), consider a generalized two-factor CIR model, where one factor is
+the interest rate, and the other one is its volatility. The volatility in
+that model is a variation of the volatility in the popular Heston (1993)
+model. Cotton et al. (2004) calculate an
+asymptotic expansion of the bond price in such a model (with constant
+parameters) when the speed of mean reversion is fast. Fouque and Lorig
+(2011) generalize this model to a model with a volatility of volatility.
+
+Finally, we note that several authors have generalized the CIR model in a
+different way using multiple factors. We refer the reader to the references
+contained in Chen, Filipovic and Poor (2004) and Gourieroux and Monfort
+(2011).
+
+In the same way that it is not too difficult to generalize the one-factor
+CIR model to multiple factors (see Duffie and Kan, 1996), we believe it is
+not difficult to generalize our results on the extended CIR model to
+multiple factors. However, we leave this for future research.
+\section{Characteristic Function of ECIR Model}
+\begin{theorem}
+\label{thm1}
+For $t\ge0$, the characteristic function of $r(t)$ is given by
+\begin{equation}  \label{CF}
+\mathbb E[e^{i\omega r(t)}]=\exp \bigg( i\omega \Big( \frac{r_{0}e^{-%
+\int_{0}^{t}b(u)\ud u}}{1-2i\omega \Sigma (0,t)}+\int_{0}^{t}\frac{\theta
+(s)e^{-\int_{s}^{t}b(u)\ud u}}{1-2i\omega \Sigma (s,t)}\ud s\Big) \bigg),
+\end{equation}%
+where
+$$
+\Sigma (s,t):=\frac{1}{4}\int_{s}^{t}e^{-\int_{v}^{t}b(u)\ud u}\sigma ^{2}(v)\ud v.
+$$
+\end{theorem}
+\begin{proof}
+ Let $\{X^{(\gamma)}_t\}_{t\ge0}$ be a squared Bessel process with initial value $X^{(\gamma)}_0=x$. On one hand, from Proposition 3.4 in Carmona (1996), we derive the characteristic function of $X^{(\gamma)}_t$ as
+\begin{equation}
+\label{CHX}
+\mathbb E[e^{i\omega X_t^{(\gamma)}}]=\exp\bigg(i\omega\Big(\frac{ x}{1-2i\omega t}+\int_0^t\frac{\gamma(u)}{1-2i\omega(t-u)}\ud u\Big)\bigg).
+\end{equation}
+On the other hand, it is shown that $(r(t))_{t\ge0}$ in (\ref{CF}) follows the same distribution as a squared Bessel process with time and state changes (see Lemma 2.4 and Corollary 3.1 in Shirakawa, 2002):
+\begin{equation}
+\label{Law}
+\left\{r(t)\right\}_{t\ge0}\sim\left\{\nu(t)X_{\tau(t)}^{(\gamma)}\right\}_{t\ge0},
+\end{equation}
+with
+\begin{itemize}
+   \item The state change parameter $\nu(t)=\exp\big(-\int_0^tb(u)\ud u\big)$.
+  \item The time change parameter $\tau(t)=\frac{1}{4}\int_0^t\frac{\sigma^2(u)}{\nu(u)}\ud u$.
+  \item $\gamma(t)=\frac{4(\theta\circ \tau^{-1})(t)}{(\sigma^2\circ \tau^{-1})(t)}$, where $f\circ g$ denotes the composed function of $f$ and $g$.
+       \item $\{X_t^{(\gamma)}\}_{t\ge0}$ denotes the squared Bessel process with time-varying dimension $\gamma(t)$ and initial value $X_0^{(\gamma)}=r_0$.
+\end{itemize}
+It follows from (\ref{CHX}) and (\ref{Law}) that
+\begin{eqnarray}
+\label{deriveLaw1}
+&&\mathbb E[e^{i\omega r(t)}]=\mathbb E\big[e^{i\omega \nu(t)X_{\tau(t)}^{(\gamma)}}\big]\nonumber\\
+&&=\exp\bigg(i\omega\nu(t)\Big(\frac{ r_0}{1-2i\omega\nu(t) \tau(t)}+\int_0^{\tau(t)}\frac{4(\theta\circ \tau^{-1})(u)/(\sigma^2\circ \tau^{-1})(u)}{1-2i\omega\nu(t)(\tau(t)-u)}\ud u\Big)\bigg).\nonumber\\
+\end{eqnarray}
+By the change of variable $u=\tau(s)$ and the fact that $\tau'(s)=\frac{1}{4}\frac{\sigma^2(s)}{\nu(s)}$,
+\begin{eqnarray}
+\label{deriveLaw2}
+&&\int_0^{\tau(t)}\frac{4(\theta\circ \tau^{-1})(u)/(\sigma^2\circ \tau^{-1})(u)}{1-2i\omega\nu(t)(\tau(t)-u)}\ud u
+=
+\int_0^{t}\frac{4\theta(s)/\sigma^2(s)}{1-2i\omega\nu(t)(\tau(t)-\tau(s))}\tau'(s)\ud s\nonumber\\
+&&=\int_0^{t}\frac{\theta(s)/\nu(s)}{1-2i\omega\nu(t)(\tau(t)-\tau(s))}\ud s.
+\end{eqnarray}
+Then plugging  (\ref{deriveLaw2}) into (\ref{deriveLaw1}) leads to (\ref{CF}).
+\end{proof}
+
+
+Note that another proof of Theorem \ref{thm1} by using the Fokker-Planck equation is provided in Liu, Peng and Schellhorn (2013).
+\section{Probability Density of ECIR Model}
+In the following theorem we derive the transition probability density of $r(t)$, starting from $r(0)=r_0$. Define
+$$
+d(t)=\frac{4\theta(t)}{\sigma(t)^2}
+$$
+and assume $d\in C^1(0,\infty)$.
+\begin{theorem}
+\label{thm:density}
+Let $r(t)$ satisfy Equation (\ref{CIR}), then there is a sequence of independent random variables $\{X_{0},X_{0,N},\ldots,X_{N-1,N},~N\ge1\}$ verifying
+\begin{eqnarray*}
+&&X_0\sim \chi_{d(0)}^2\Big(\frac{r_0e^{-\int_0^tb(u)\ud u}}{\Sigma(0,t)}\Big);\\
+&&X_{j,N}\sim \chi_{\frac{t}{N}d'(\frac{jt}{N})}^2~\mbox{for}~j=0,\ldots,N-1;
+\end{eqnarray*}
+and
+\begin{equation}
+\label{dist}
+\Sigma(0,t)X_0+\sum_{j=0}^{N-1}\Sigma\Big(\frac{jt}{N},t\Big)X_{j,N}\xrightarrow[N\rightarrow\infty]{\mbox{in distribution}}r(t),
+\end{equation}
+where we denote by $\chi_q^2(\lambda)$ ($\lambda\ge0$) the noncentral chi-square distribution with $q\ge0$ ($q$ is not necessarily an integer) degrees of freedom and by $\chi^2_q$ with $q\ge0$ a central chi-square distribution with $q\ge0$ degrees of freedom.
+\end{theorem}
+
+A straightforward result of Theorem \ref{thm:density} is: the solution of Equation (\ref{CIR}) is distributed as the limit of sum of independent scaled chi-square random variables. More precisely, the following statement holds true:
+\begin{corollary}
+\label{cor1}
+For $t\ge0$, the random variable $r(t)$ in (\ref{CIR}) has probability density (with support $(0,+\infty)$)
+\begin{equation}
+\label{density}
+f_{r(t)}(z)=\lim\limits_{N\rightarrow\infty}h*h_{0,N}*\ldots*h_{N-1,N}(z),
+\end{equation}
+where $f*g$ denotes the convolution of $f,g$ and the functions $\{h,h_{j,N}:~j=0,1,\ldots,N-1\}$ are defined by: with support $x>0$,
+\begin{eqnarray}
+\label{h}
+&&h(x):=\frac{1}{2\Sigma(0,t)}e^{-\frac{r_0\exp(-\int_0^tb(u)\ud u)+x}{2\Sigma(0,t)}}\Big(\frac{r_0e^{-\int_0^tb(u)\ud u}}{x}\Big)^{1/2-d(0)/4}\nonumber\\
+&&\times I_{d(0)/2-1}\Big(\frac{r_0\exp(-\int_0^tb(u)\ud u)x}{\Sigma(0,t)^2}\Big)^{1/2}
+\end{eqnarray}
+and
+\begin{equation}
+\label{qJN}
+h_{j,N}(x):=\frac{\left(x/(2\Sigma(jt/N,t))\right)^{\frac{t}{2N}d'(\frac{jt}{N})-1}e^{-\frac{x}{2\Sigma(jt/N,t)}}}{2\Sigma(jt/N,t)\Gamma\left(\frac{t}{2N}d'(\frac{jt}{N})\right)},
+\end{equation}
+where
+\begin{itemize}
+\item $I_{\alpha}$, with $\alpha$ being integer or positive, is the  modified Bessel function of the first kind defined by (see e.g. Abramowitz and Stegun, 1965)
+$$
+I_\alpha(x):=\sum_{l=0}^{\infty}\frac{(\frac{x}{2})^{2l+\alpha}}{l!\Gamma(l+\alpha+1)}.
+$$
+\end{itemize}
+\end{corollary}
+Now we prove Theorem \ref{thm:density}.
+
+
+\begin{proof}
+First we observe that, by using integration by parts,
+\begin{eqnarray}
+\label{intd}
+&&\frac{1}{2}\int_0^td'(s)\log\left(1-2i\omega\Sigma(s,t)\right)\ud s\nonumber\\
+&&=-\frac{d(0)}{2}\log\left(1-2i\omega\Sigma(0,t)\right)-i\omega\int_0^t\frac{d(s)e^{-\int_s^tb(u)\ud u}\sigma^2(s)/4}{1-2i\omega\Sigma(s,t)}\ud s.
+\end{eqnarray}
+Since the mappings $s\mapsto d'(s)$ and $s\mapsto\Sigma(s,t)$ are continuous, we use (\ref{CF}), (\ref{intd}) and the Riemann sum representation of integral to obtain
+\begin{eqnarray}
+\label{E:dec}
+\mathbb E[e^{i\omega r(t)}]&=&\frac{\exp\big(\frac{i\omega r_0e^{-\int_0^tb(u)\ud u}}{1-2i\omega \Sigma(0,t)}-\frac{1}{2}\int_0^td'(s)\log\left(1-2i\omega\Sigma(s,t)\right)\ud s\big)}{(1-2i\omega \Sigma(0,t))^{d(0)/2}}\nonumber\\
+&=&\frac{\exp\big(\frac{i\omega r_0e^{-\int_0^tb(u)\ud u}}{1-2i\omega \Sigma(0,t)}\big)}{(1-2i\omega \Sigma(0,t))^{d(0)/2}}\cdot e^{-\frac{1}{2}\int_0^td'(s)\log\left(1-2i\omega\Sigma(s,t)\right)\ud s}\nonumber\\
+&=&\frac{\exp\big(\frac{i\omega r_0e^{-\int_0^tb(u)\ud u}}{1-2i\omega \Sigma(0,t)}\big)}{(1-2i\omega \Sigma(0,t))^{d(0)/2}}\Big(\lim_{N\rightarrow\infty}e^{-\frac{1}{2}\sum_{j=0}^{N-1}\frac{t}{N}d'(\frac{jt}{N})\log(1-2i\omega\Sigma(\frac{jt}{N},t))}\Big)\nonumber\\
+&=&\lim_{N\rightarrow\infty}\frac{\exp\big(\frac{i\omega r_0e^{-\int_0^tb(u)\ud u}}{1-2i\omega \Sigma(0,t)}\big)}{(1-2i\omega \Sigma(0,t))^{d(0)/2}}\Big(\prod_{j=0}^{N-1}\Big(1-2i\omega\Sigma(\frac{jt}{N},t)\Big)^{-\frac{t}{2N}d'(\frac{jt}{N})}\Big).\nonumber\\
+\end{eqnarray}
+The first factor on the right-hand side of (\ref{E:dec}):
+$$
+\frac{\exp\big(\frac{i\omega r_0e^{-\int_0^tb(u)\ud u}}{1-2i\omega \Sigma(0,t)}\big)}{(1-2i\omega \Sigma(0,t))^{d(0)/2}}
+$$
+is known as the characteristic function of a scaled noncentral chi-square distribution with noncentral parameter $\frac{r_0e^{-\int_0^tb(u)\ud u}}{\Sigma(0,t)}$, $d(0)$ degrees of freedom and scaling parameter $\Sigma(0,t)$, i.e., its corresponding random variable is $\Sigma(0,t)X_0$ with
+\begin{equation}
+\label{X0}
+X_0\sim\chi_{d(0)}^2\Big(\frac{r_0e^{-\int_0^tb(u)\ud u}}{\Sigma(0,t)}\Big).
+\end{equation}
+For the second part on the right-hand side of (\ref{E:dec}), we observe that for $j=0,1,\ldots,N-1$, $\omega\mapsto(1-2i\omega\Sigma(\frac{jt}{N},t))^{-\frac{t}{2N}d'(\frac{jt}{N})}$ is the characteristic function of the random variable $\Sigma(\frac{jt}{N},t)X_{j,N}$, with
+\begin{equation}
+\label{XjN}
+X_{j,N}\sim \chi^2_{\frac{t}{N}d'(\frac{jt}{N})}.
+\end{equation} Therefore Theorem \ref{thm:density} follows from (\ref{E:dec}), (\ref{X0}), (\ref{XjN}) and the L\'evy-Cram\'er continuity theorem.
+\end{proof}
+\section{An approximation formula of the density function of $r(t)$}
+In this section, we derive an efficient approximation formula of the explicit probability density of $r(t)$. The result is the following theorem.
+ \begin{theorem}
+ \label{exdensity}
+ Let $N\ge2$ and
+ \begin{equation}
+ \label{exfN}
+ f_N=h*h_{0,N}*\ldots*h_{N-1,N}.
+ \end{equation}
+We have for $z>0$,
+ \begin{eqnarray}
+ \label{exfN1}
+&&f_N(z)=\int_{0}^z\frac{1}{2\Sigma(0,t)}e^{-\frac{r_0\exp(-\int_0^tb(u)\ud u)+x}{2\Sigma(0,t)}}\Big(\frac{r_0e^{-\int_0^tb(u)\ud u}}{x}\Big)^{1/2-d(0)/4}\nonumber\\
+&&\times I_{d(0)/2-1}\Big(\frac{(r_0x)^{1/2}\exp(-\frac{1}{2}\int_0^tb(u)\ud u)}{\Sigma(0,t)}\Big)\Big(\sum_{k=0}^{\infty}b_{k,N}\psi_{k,N}(z-x)\Big)\ud x,\nonumber\\
+\end{eqnarray}
+where
+\begin{itemize}
+\item for $N\ge2$ and $k\in\mathbb N$,
+$$
+b_{k,N}=a_{k,N}\prod_{j=1}^{N-1}\big(\frac{\Sigma(0,t)}{\Sigma(\frac{jt}{N},t)}\big)^{\frac{t}{2N}d'(\frac{jt}{N})}
+$$
+and the sequence $\{a_{k,N}\}_{k\ge0}$ satisfies
+$$
+a_{k,2}=\Big(\frac{t}{4}d'(\frac{t}{2})\Big)^{(k)}\Big(1-\frac{\Sigma(0,t)}{\Sigma(\frac{t}{2},t)}\Big)^kk!,~\mbox{for $k\in\mathbb N$}
+$$
+and
+$$
+a_{k,N}=\sum\limits_{l=0}^kA_{l,N}^{(N-1)}\Big(\frac{t}{2N}d'(\frac{(N-1)t}{N})\Big)^{(k-l)}\Big(1-\frac{\Sigma(0,t)}{\Sigma(\frac{(N-1)t}{N},t)}\Big)^{k-l}(k-l)!
+$$
+for $N\ge3$ and $k\in\mathbb N$, where $(m)^{(r)}=m(m+1)\ldots(m+r-1)$ denotes the rising factorial.
+\item $\psi_{k,N}$ is the density function of the Gamma distribution with shape parameter $\sum_{j=0}^{N-1}\frac{t}{2N}d'(\frac{jt}{N})+k$ and scale parameter $2\Sigma(0,t)$:
+\begin{equation}
+\label{psi}
+\psi_{k,N}(x)=\frac{x^{\sum_{j=0}^{N-1}\frac{t}{2N}d'(\frac{jt}{N})+k-1}e^{-\frac{x}{2\Sigma(0,t)}}}{(2\Sigma(0,t))^{\sum_{j=0}^{N-1}\frac{t}{2N}d'(\frac{jt}{N})+k}\Gamma\big(\sum_{j=0}^{N-1}\frac{t}{2N}d'(\frac{jt}{N})+k\big)}.
+\end{equation}
+\end{itemize}
+ \end{theorem}
+ \begin{proof} In view of Moschopoulos and Canada (1984), the probability density $f_N$ in (\ref{exfN}) is given as
+\begin{equation}
+\label{df}
+f_N(z)=\Big(\prod_{j=1}^{N-1}\Big(\frac{\Sigma(0,t)}{\Sigma(\frac{jt}{N},t)}\Big)^{\frac{t}{2N}d'(\frac{jt}{N})}\Big)\sum_{k=0}^{\infty}a_{k,N}\psi_{k,N}(z),
+\end{equation}
+where
+\begin{itemize}
+\item the sequence $\{a_{k,N}\}_{k\ge0,N\ge2}$ solves
+$$
+\prod_{k=2}^{N}\Big(\sum_{r=0}^{\infty}(\frac{t}{2N}d'(\frac{(k-1)t}{N}))^{(r)}\big(1-\frac{\Sigma(0,t)}{\Sigma(\frac{(k-1)t}{N},t)}\big)^{r}r!x^{-r}\Big)=\sum_{k=0}^{\infty}a_{k,N}x^{-k},
+$$
+Equivalently (we refer to (2.3), (2.5) in Moschopoulos and Canada, 1984), for $N\ge 2$,
+$a_{k,N}=A_{k,N}^{(N)}$, with $\{A_{k,N}^{(p)}\}_{k\ge0,p\ge2}$ being defined by
+$$
+A_{k,N}^{(2)}=\Big(\frac{t}{2N}d'(\frac{t}{N})\Big)^{(k)}\Big(1-\frac{\Sigma(0,t)}{\Sigma(\frac{t}{N},t)}\Big)^kk!,~\mbox{for $k\in\mathbb N$}
+$$
+and
+$$
+A_{k,N}^{(p)}=\sum\limits_{l=0}^kA_{l,N}^{(p-1)}\Big(\frac{t}{2N}d'(\frac{(p-1)t}{N})\Big)^{(k-l)}\Big(1-\frac{\Sigma(0,t)}{\Sigma(\frac{(p-1)t}{N},t)}\Big)^{k-l}(k-l)!
+$$
+for $p\ge3$ and $k\in\mathbb N$.
+\item The expression of $\psi_{k,N}$ in (\ref{psi}) results from (2.4) in Moschopoulos and Canada (1984).
+\end{itemize}
+Finally (\ref{exfN1}) follows from (\ref{h}) and (2.6) in Moschopoulos and Canada (1984).
+\end{proof}
+\begin{thebibliography}{99}
+\footnotesize
+
+\bibitem{Abramowitz and Stegun}
+{\sc Abramowitz, M. and Stegun, I.} (1965). {\em Handbook of Mathematical Functions: with Formulas, Graphs, and Mathematical Tables.} New York, Dover 13.
+
+\bibitem{Bell}
+{\sc Bell, E.T.} (1934). Exponential polynomials. {\em Annals of Mathematics.} {\bf 35,} 258--277.
+\bibitem{Carmona} {\sc Carmona, P.} (1994) G\'en\'eralisations de la loi de l'arc sinus et entrelacements de processus de
+Markov, {\em Ph.D. dissertation, University Paris 6.}
+
+\bibitem{Cochran}
+{\sc Cochran, W.~G.} (1934). The distribution of quadratic forms in a normal
+system, with applications to the analysis of covariance. {\em Mathematical
+Proceedings of the Cambridge Philosophical Society.} {\bf 30(2),} 178--191.
+
+\bibitem{Comtet}
+{\sc Comptet, L.} (1974). \emph{Advanced Combinatorics: The Art of Finite and Infinite Expansions,} Revised and Enlarged Edition, D. Reidel Publishing Co., Dordrecht and Boston.
+
+\bibitem{Cox et al.}
+{\sc Cox, J.~C., Ingersoll, J.~E. and Ross, S.~A.} (1985).  A theory of the term
+structure of interest rates. {\em Econometrica.}
+{\bf 53,} 385--487.
+
+\bibitem{Daalhuis}
+{\sc Daalhuis, A.~B.} (2010).  {\em Confluent hypergeometric function, in: Handbook of Mathematical Functions.} Cambridge University Press.
+
+\bibitem{Daboul}
+{\sc Daboul, S. et al.} (2013).  The Lah numbers and the $n$th derivative of $Exp(1/x)$.   \emph{Mathematics Magazine,} \textbf{86 (1),} 39--47.
+
+
+\bibitem{Evans et al.}
+{\sc Evans, M., Hastings, N. and Peacock, B.} (1992). {\em Statistical Distributions,} 3rd ed, New York, Wiley, pp. 57.
+
+\bibitem{Liu et al.}
+{\sc Liu, Z., Peng, Q. and Schellhorn, H.} (2013).  A bond option pricing formula
+in a generalized CIR model with stochastic volatility. Preprint.
+
+
+\bibitem{Maghsoodi}
+{\sc Maghsoodi, Y.} (2006).  Solutions of the extended CIR term structure and
+bond option valuation. {\em Mathematical Finance}
+{\bf 6(1),} 89--109.
+
+\bibitem{Moschopoulos}
+{\sc Moschopoulos, P.G. and Canada, W.B.} (1984).  The distribution function of a linear combination of chi-squares. {\em Comp. $\&$ Maths. with Appls.}
+{\bf 10(415),} 383--386.
+
+\bibitem{Siegel}
+{\sc Siegel, A. F.} (1979).  The noncentral chi-square distribution with zero degrees of freedom and testing for uniformity. {\em Biometrika}
+{\bf 66(2),} 381--386.
+
+\bibitem{Riordan}
+{\sc Riordan, J.} (1958).  \emph{Introduction to Combinatorial Analysis,} Princeton University Press.
+
+\bibitem{Shirakawa}
+{\sc Shirakawa, H.} (2002).  Squared Bessel processes and their applications
+to the square root interest rate model {\em Asia-Pacific Financial Markets.}
+{\bf 9,} 169--190.
+
+\bibitem{Spanier}
+{\sc Spanier, J. and Oldham, K. B.} (1987).  \emph{An Atlas of Functions,} Hemisphere Publishing Co., Sringer-Verlag.
+
+\end{thebibliography}
+\end{document}
