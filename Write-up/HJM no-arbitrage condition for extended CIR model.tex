@@ -53,7 +53,7 @@
 \numberwithin{equation}{section}
 
 \begin{document}
-\title{Proof of HJM No-arbitrage Condition for Generalized Extended CIR Model}
+\title{Proof of HJM No-arbitrage Condition for Extended CIR Model}
 \author{Ran Zhao}
 \date{}
 \maketitle
@@ -65,13 +65,13 @@
 \section{Proof}
 The generalized extended CIR model we proposed is
 $$
-d R(t) = (a(t) - b(t) R(t)) dt + \sigma(t) R(t)^{\beta(t)} d\tilde{W}(t).
+d R(t) = (a(t) - b(t) R(t)) dt + \sigma(t) \sqrt{R(t)} d\tilde{W}(t).
 $$
 where all the model parameters are time-dependent, and $\tilde{W}(t)$ is a Brownian modtion under a risk-neutral probability measure $\tilde{\mathbb{P}}$.
 
 Let bond price $B(t,T)=f(t,R(t))$. The discounted bond price should be martingale under risk neutral measure, therefore
 \begin{equation} \label{sde_bond}
-f_t(t,r) + (a(t)-b(t)r) f_r(t,r) + \frac{1}{2}\sigma(t)^2 R(t)^{\beta(t)}f_{rr}(t,r) = r f(t,r).
+f_t(t,r) + (a(t)-b(t)r) f_r(t,r) + \frac{1}{2}\sigma(t)^2 r f_{rr}(t,r) = r f(t,r).
 \end{equation}
 This is equation (6.5.4) from Shreve's book.
 
@@ -82,7 +82,7 @@ B(t, T) = e^{-R(t)C(t,T) - A(t,T)}.
 
 Substitute equation~(\ref{bond_price}) into equation~(\ref{sde_bond}), we have
 $$
-[(-C'(t,T)+b(t)C(t,T) + \frac{1}{2}\sigma(t)^2 r^{2\beta-1}C(t,T)^2-1)r - A'(t,T)-aC(t,T)] = 0.
+[(-C'(t,T)+b(t)C(t,T) + \frac{1}{2}\sigma(t)^2 C(t,T)^2-1)r - A'(t,T)-aC(t,T)]f(t,r) = 0.
 $$
 where $C'(t,T)=\frac{\partial}{\partial t}C(t,T)$ and $A'(t,T)=\frac{\partial}{\partial t}A(t,T)$.
 
@@ -90,39 +90,38 @@ The above equation should hold for every $r$, and we obtain the SDEs
 \begin{equation}
 \label{CIR}
 \left\{\begin{array}{ll}
-&C'(t,T) = b(t)C(t,T) + \frac{1}{2}\sigma(t)^2 R(t)^{2\beta(t)-1} C(t,T)^2 - 1,  \\
+&C'(t,T) = b(t)C(t,T) + \frac{1}{2}\sigma(t)^2 R(t) C(t,T)^2 - 1,  \\
 &A'(t,T) = -a C(t,T).
 \end{array}\right.
 \end{equation}
 
 Differentiate both sides by $T$, and we yield
 \begin{equation}
-\label{CIR}
 \left\{\begin{array}{ll}
-&\frac{\partial}{\partial T}C'(t,T) = b(t) \frac{\partial}{\partial t} C(t,T) + \sigma(t)^2 R(t)^{2\beta(t)-1} C(t,T)\frac{\partial}{\partial T}C(t,T),    \\
-&\frac{\partial}{\partial T}A'(t,T) = -a \frac{\partial}{\partial T}C(t,T). 
-\end{array}\right.
+&\frac{\partial}{\partial T}C'(t,T) = b(t) \frac{\partial}{\partial t} C(t,T) + \sigma(t)^2 R(t) C(t,T)\frac{\partial}{\partial T}C(t,T),    \\
+&\frac{\partial}{\partial T}A'(t,T) = -a \frac{\partial}{\partial T}C(t,T).
+\end{array}\right.\label{CIR_pde}
 \end{equation}
 
 A general affine interest rate model is
 $$
-d R(t) = \beta{t,R(t)}dt + \gamma{r,R(t)} d\tilde{W}(t)
+d R(t) = \beta(t,R(t))dt + \gamma(r,R(t)) d\tilde{W}(t)
 $$
 
 Following section 10.3.5 of Shreve's book, the HJM no-arbitrage condition (Shreve's Theorem 10.3.1) for affine model is equivalent to the validation of
-\begin{equation}\label{hjm}
-\frac{\partial}{\partial T} C(t,T) \beta(t, R(t)) + R(t) \frac{\partial}{\partial T} C'(t,T) + \frac{\partial}{\partial T} A'(t,T) = \left(\frac{\partial}{\partial T} C(t,T)\right) C(t,T) \gamma(t,R(t))^2.
+\begin{equation}
+\frac{\partial}{\partial T} C(t,T) \beta(t, R(t)) + R(t) \frac{\partial}{\partial T} C'(t,T) + \frac{\partial}{\partial T} A'(t,T) = \left(\frac{\partial}{\partial T} C(t,T)\right) C(t,T) \gamma(t,R(t))^2. \label{hjm}
 \end{equation}
 
-Substitute equation (\label{pde_c}) and equation (\label{pde_a}) into the left-hand side of equation (\label{hjm}). We have
+Substitute equation (\ref{CIR_pde}) into the left-hand side of equation (\ref{hjm}). We have
 \begin{eqnarray*}
 \frac{\partial}{\partial T} C(t,T) \beta(t, R(t)) &+& R(t) \frac{\partial}{\partial T} C'(t,T) + \frac{\partial}{\partial T} A'(t,T) \\
 &=& \frac{\partial}{\partial T} C(t,T) (a(t)-b(t)R(t)) \\
-& & + R(t)[b(t) \frac{\partial}{\partial t} C(t,T) + \sigma(t)^2 R(t)^{2\beta-1} C(t,T)\frac{\partial}{\partial T}C(t,T)] -a \frac{\partial}{\partial T}C(t,T) \\
-&=& R(t)\sigma(t)^2 R(t)^{2\beta(t)-1} C(t,T)\frac{\partial}{\partial T} C(t,T) \\
+& & + R(t)[b(t) \frac{\partial}{\partial t} C(t,T) + \sigma(t)^2 C(t,T)\frac{\partial}{\partial T}C(t,T)] -a \frac{\partial}{\partial T}C(t,T) \\
+&=& R(t)\sigma(t)^2  C(t,T)\frac{\partial}{\partial T} C(t,T) \\
 &=& \left(\frac{\partial}{\partial T} C(t,T)\right) C(t,T) \gamma(t,R(t))^2.
 \end{eqnarray*}
 
-Hence we completed the proof of HJM no-arbitrage condition for generalized extended CIR model.
+Hence we completed the proof of HJM no-arbitrage condition for extended CIR model.
 
 \end{document}
