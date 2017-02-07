@@ -1,0 +1,84 @@
+
+\documentclass[6pt]{article}
+\usepackage{float}
+\usepackage{graphicx,epstopdf}
+\usepackage{bbm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{csquotes}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{theorem}
+\usepackage{graphicx}
+\usepackage[dvips]{epsfig}
+\usepackage{latexsym}
+\usepackage{exscale}
+\usepackage[latin1]{inputenc}
+\def\ud{\, \mathrm{d}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, September 28, 2014 13:53:13}
+%TCIDATA{LastRevised=Monday, October 06, 2014 05:15:04}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\numberwithin{equation}{section}
+
+\begin{document}
+\title{Derivation of Fokker-Planck Equation of GECIR Model}
+\author{Ran Zhao}
+\date{}
+\maketitle
+
+%\begin{abstract}
+
+%\end{abstract}
+
+\section{Fokker-Planck Equation}
+The generalized extended CIR model (GECIR) we proposed is
+$$
+d r(t) = (\theta(t) - b(t) r(t)) dt + \sigma(t) r(t)^{\beta} dW(t).
+$$
+where all the model parameters except the power term $\beta$ are known deterministic function of time. $\beta$ is a known constant. $\tilde{W}(t)$ is a Brownian modtion.
+
+Let $f(r,t)$ be the density of the random variable $r(t)$. The Fokker-Planck (Kolmogorov forward equation) of the GECIR model is:
+\begin{eqnarray*}
+\frac{\partial f(r,t)}{\partial t} &=& -\frac{\partial}{\partial r}\left[(\theta(t) - b(t) r(t)) f(r,t)\right] + \frac{1}{2}\frac{\partial^2}{\partial r^2} \left[\sigma(t)^2 r(t)^{2\beta} f(r,t)\right] \\
+    &=& -\frac{\partial}{\partial r}\left[\theta(t)f(r,t) - b(t) r(t)f(r,t)\right] + \frac{1}{2}\sigma(t)^2 \frac{\partial}{\partial r} \left[2\beta r(t)^{2\beta-1} f(r,t) + r(t)^{2\beta} \frac{\partial f(r,t)}{\partial r}\right] \\
+    &=& -\theta(t)\frac{\partial f(r,t)}{\partial r} + b(t)f(r,t) + b(t)r(t) \frac{f(r,t)}{\partial t} \\
+    & & + \frac{1}{2}\sigma(t)^2 \left[ (2\beta-1)2\beta r(t)^{2\beta-2}f(r,t) + 2\beta r(t)^{2\beta-1} \frac{\partial f(r,t)}{\partial r} \right] \\
+    & & + \frac{1}{2}\sigma(t)^2 \left[ 2\beta r(t)^{2\beta-1} \frac{\partial f(r,t)}{\partial r} + r(t)^{2\beta} \frac{\partial^2 f(r,t)}{\partial r^2} \right] \\
+    &=& [b(t) + \sigma(t)^2(2\beta-1)\beta r(t)^{2\beta-2}] f(r,t) + \left[ -\theta(t) + b(t)r(t) + 2\sigma(t)^2 \beta r(t)^{2\beta-1} \right] \frac{\partial f(r,t)}{\partial r} \\
+    & & + \frac{1}{2}\sigma(t)^2 r(t)^{2\beta}  \frac{\partial^2 f(r,t)}{\partial r^2}
+\end{eqnarray*}
+
+
+\end{document}
